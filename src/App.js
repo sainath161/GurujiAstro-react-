@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import PersonalInfo from './components/PersonalInfo';
+import AddressInfo from './components/AddressInfo';
+import Confirmation from './components/Confirmation';
+import Navigation from './components/Navigation';
+import GlobalStyles from './styles/GlobalStyles';
 
-function App() {
+const App = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address1: '',
+    address2: '',
+    city: '',
+    state: '',
+    zip: ''
+  });
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      setFormData(JSON.parse(savedData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('formData', JSON.stringify(formData));
+  }, [formData]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="form-container">
+      <GlobalStyles />
+      <Navigation currentStep={currentStep} />
+      {currentStep === 1 && (
+        <PersonalInfo formData={formData} setFormData={setFormData} setStep={setCurrentStep} />
+      )}
+      {currentStep === 2 && (
+        <AddressInfo formData={formData} setFormData={setFormData} setStep={setCurrentStep} />
+      )}
+      {currentStep === 3 && (
+        <Confirmation formData={formData} setFormData={setFormData} setStep={setCurrentStep} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

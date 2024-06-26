@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Multi-Step Form with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements a responsive multi-step form using React.js, featuring three steps for entering personal information, address information, and confirmation. The form includes data validation, error handling, local storage persistence, and a polished user interface.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+    Multi-step Form: Divided into three steps: Personal Information, Address Information, and Confirmation.
+    Navigation Controls: Tabbed navigation to switch between steps, with back and next buttons appropriately enabled/disabled.
+    Validation: Client-side validation ensures all fields are filled correctly before allowing navigation to the next step.
+    Local Storage: Persist entered data to local storage, pre-filling form fields if the user revisits the form.
+    Responsive Design: Ensures the form works seamlessly across desktop, tablet, and mobile screens.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    React.js
+    styled-components for styling
+    Bootstrap for additional styling and responsiveness
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Setup Instructions
 
-### `npm test`
+To run this project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+git clone <repository-url>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate into the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd multi-step-form-react
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install dependencies:
 
-### `npm run eject`
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+    Fill in the form fields across the three steps.
+    Use tabbed navigation or buttons to switch between steps.
+    Ensure all required fields are correctly filled before proceeding to the next step.
+    Upon submitting the form in the Confirmation step, a modal will appear confirming successful submission.
+    Data is persisted to local storage, allowing the form to be revisited and fields pre-filled.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
